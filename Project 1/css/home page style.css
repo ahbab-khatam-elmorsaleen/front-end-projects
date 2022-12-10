@@ -1,0 +1,363 @@
+
+/* default settings */
+body{
+    background-color: rgb(3, 79, 111);
+    height: 2600px;
+}
+
+*{
+    font-family: 'varela round' , sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* header */
+.header{
+    width: 100%;
+    height: 60px;
+    top: 0;
+    background-color: rgb(14, 11, 11);
+    overflow: auto;
+    position: fixed;
+}
+
+.logo{
+    width: 200px;
+    height: 60px;
+    float: left;
+}
+
+.header h1{
+    color: rgb(92, 185, 224);
+    font-size: 30px;
+    margin-top: 15px;
+    margin-left: 27%;
+
+    float: left;
+}
+
+.header-list{
+    list-style-type: none;
+    float: right;
+    margin: 15px  50px;
+}
+
+.header-list li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-list li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header-list li a:hover{
+    text-decoration-line: underline;
+    color: rgb(31, 161, 218);
+}
+
+
+/* introduction of home page */
+.intro{
+    height: 70vh;
+    margin-top: 60px;
+    background-color: rgb(3, 79, 111);
+    overflow: auto;
+}
+
+.intro .intro-desc{
+    margin: 50px;
+    width: 600px;
+    float: left;
+}
+
+.intro .intro-desc h2{
+    font-size: 40px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.intro .intro-desc p{
+    font-size: 20px;
+    color: white;
+}
+
+.intro .intro-desc a{
+    color: rgb(92, 185, 224);
+}
+
+.intro .intro-desc span{
+    color: rgb(92, 185, 224);
+    font-weight: bold;
+}
+
+.intro .intro-desc .button1, .button2, .button3{
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.intro .intro-desc button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.intro .intro-desc .button1{
+    background-color: rgb(35, 158, 101);
+}
+
+.intro .intro-desc .button2{
+    background-color: rgb(31, 161, 218);
+}
+
+.intro .intro-desc .button3{
+    background-color: rgb(8, 102, 142);
+}
+
+.intro .intro-video{
+    float: right;
+    margin: 50px;
+}
+
+/* Download IDE */
+
+.downloading{
+    overflow: auto;
+    text-align: center;
+    background-color: white;
+}
+
+.downloading h2{
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.downloading p{
+    font-size: 1.25rem;
+}
+
+.downloading div{
+    width: 350px;
+    text-align: center;
+    float: left;
+    margin: 50px 70px;
+}
+
+
+.downloading div button{
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    background-color: rgb(31, 161, 218);
+    padding-bottom: 20px;
+}
+
+.downloading div a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.downloading div img{
+    width: inherit;
+    height: 200px;
+    display: block;
+}
+
+.downloading .line{
+    width: 90%;
+    height: 4px;
+    display: block;
+    background-color: rgb(58, 117, 176);
+    border-radius: 20px;
+    margin: 350px auto  0 auto;
+}
+
+/* Learn Java */
+
+.learning{
+    overflow: auto;
+    text-align: center;
+    background-color: white;   
+}
+
+.learning .learning-title{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.learning .line{
+    width: 80px;
+    height: 4px;
+    display: block;
+    background-color: rgb(58, 117, 176);
+    border-radius: 20px;
+    margin: 15px auto;
+}
+
+
+
+ .learning div{
+    border: 2px solid rgba(0, 0, 0, 0.242);
+    margin: 10px 50px;
+    border-radius: 10px;
+    float: left;
+}
+
+.learning .level1,.level2{
+    height: 300px;
+    width: 400px;
+    background-color: rgb(58, 117, 176);
+}
+
+.learning .level3{
+    height: 300px;
+    width: 400px;
+    background-color: rgb(58, 117, 176);
+}
+
+.learning .level4,.level5{
+    height: 200px;
+    width: 400px;
+    background-color: rgb(25, 135, 84);
+}
+
+.learning .level6{
+    height: 405px;
+    width: 400px;
+    background-color: rgb(25, 135, 84);
+}
+
+.learning h3{
+    padding:5px 8px;
+    color: white;
+    font-size: 22px;
+}
+
+
+.learning div .learning-list{
+    text-align: left;
+    padding-left: 30px;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.learning div li{
+    padding-top: 10px;
+}
+
+.learning div dt{
+    display: list-item;
+    list-style-type: disc;
+    padding-top: 10px;
+}
+
+.learning div dd{
+    margin-left: 30px;
+    display: list-item;
+    list-style-type: square;
+    color: rgb(6, 40, 54);
+    font-weight: bold;
+}
+
+/* Channel */
+.Youtupe-Channel{
+    overflow: auto;
+}
+
+.Youtupe-Channel .channel{
+    margin:50px 0 50px 50px;
+    float: left;
+}
+
+.Youtupe-Channel .form{
+    width:330px;
+    height:400px;
+    margin:50px 100px 50px 0;
+    background-color: white;
+    border-radius: 10px;
+    float: right;
+}
+
+.Youtupe-Channel .form label{
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 15px;
+    display: block;
+}
+
+.Youtupe-Channel .form input{
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 5px 0 20px 15px;
+    border: 2px solid rgb(100, 139, 222);
+    display: block;
+}
+
+.Youtupe-Channel .form h4{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+input[type="submit"]{
+    background-color: rgb(31, 161, 218);
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Contacts */
+
+.contacts {
+    background-color: black;
+    height: 300px;
+}
+
+.contacts img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.contacts ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+.contacts ul li{
+    display: inline-block;
+    margin: 15px 10px;
+}
+
+.contacts ul i{
+    font-size: 40px;
+}
+
+.contacts ul .facebook, .linkedin{
+    color: rgb(6, 116, 231);
+}
+
+.contacts ul .youtube{
+    color: rgb(235, 25, 25);
+}
+
+.contacts p{
+    text-align: center;
+    color: white;
+}
