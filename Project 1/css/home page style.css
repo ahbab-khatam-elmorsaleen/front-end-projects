@@ -1,0 +1,779 @@
+
+/* default settings */
+body{
+    background-color: rgb(3, 79, 111);
+    font-family: 'varela round' , sans-serif;
+    height: 2000px;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/* header====================================================*/
+.header{
+    width: 100%;
+    height: 60px;
+    top: 0;
+    background-color: rgb(14, 11, 11);
+    overflow: auto;
+    position: fixed;
+    z-index: 5;
+}
+
+.logo{
+    width: 200px;
+    height: 60px;
+    float: left;
+}
+
+.header-list{
+    list-style-type: none;
+    float: right;
+    margin: 15px  50px;
+}
+
+.header-list li{
+    display: inline-block;
+    margin-left: 20px;
+}
+
+.header-list li a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.header-list li a:after{
+    content:"";
+    width:0;
+    height:3px;
+    display: block;
+    background-color: rgb(13, 182, 255);
+    border-radius: 1px;
+    margin-top: 3px;
+}
+
+.header-list li a:hover::after{
+    width: 100%;
+    transition: 0.5s;
+}
+
+
+/* introduction of home page==================================================== */
+.intro{
+    height: 70vh;
+    margin-top: 60px;
+    background-image: url(../images/oracle.jpg);
+    background-size: cover;
+    position: relative;
+}
+
+.intro .overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(3, 79, 111, 0.7);
+}
+
+.intro .intro-desc{
+    margin: 50px;
+    width: 600px;
+    float: left;
+}
+
+.intro .intro-desc h2{
+    font-size: 40px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.intro .intro-desc p{
+    font-size: 20px;
+    color: white;
+}
+
+.intro .intro-desc a{
+    color: rgb(92, 185, 224);
+    font-weight: bold;
+}
+
+.intro .intro-desc span{
+    color: rgb(92, 185, 224);
+    font-weight: bold;
+}
+
+.intro .intro-desc .button1, .button2, .button3{
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+    padding-top: 10px;
+    font-size: 20px;
+    color: white;
+    padding-bottom: 20px;
+}
+
+.intro .intro-desc button:hover{
+    opacity: 0.6;
+    transition: 0.5s;
+}
+
+.intro .intro-desc button a{
+    text-decoration: none;
+    color: white;
+}
+
+
+.intro .intro-desc .button1{
+    background-color: rgb(35, 158, 101);
+}
+
+.intro .intro-desc .button2{
+    background-color: rgb(31, 161, 218);
+}
+
+.intro .intro-desc .button3{
+    background-color: rgb(21, 121, 164);
+}
+
+.intro .intro-video{
+    float: right;
+    margin: 50px;
+}
+
+/* Download IDE==================================================== */
+
+.downloading{
+    text-align: center;
+    background-color: white;
+}
+
+.downloading h2{
+    padding-top: 30px;
+    padding-bottom: 20px;
+}
+
+.downloading p{
+    font-size: 1.25rem;
+}
+
+.downloading .container{
+    width: 76%;
+    margin: 20px auto;
+    overflow: auto;
+}
+
+.downloading .container .software{
+    width: 350px;
+    float: left;
+    text-align: center;
+    position: relative;
+}
+
+.downloading .container .software .software-overlay {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(3, 79, 111) ;
+    opacity: 0;
+}
+
+.downloading .container .software .software-overlay:hover {
+    opacity: 0.9;
+    transition: 0.8s;
+}
+
+
+
+.downloading .container .software2{
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+
+ .downloading .container div button{
+    height: 50px;
+    width: 180px;
+    border-radius: 10px;
+    font-size: 20px;
+    background-color: rgb(172, 216, 235);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.downloading .container div a{
+    text-decoration: none;
+    color: rgb(3, 79, 111);
+    font-weight: bold;
+}
+
+
+.downloading .container div img{
+    width: inherit;
+    height: 200px;
+    display: block;
+}
+
+.downloading .line{
+    width: 90%;
+    height: 4px;
+    display: block;
+    background-color: rgb(58, 117, 176);
+    border-radius: 20px;
+    margin: auto;
+}
+
+/* Learn Java==================================================== */
+
+.learning{
+    background-color: white;  
+}
+
+.Basics-paths{
+    overflow: auto;
+    width: 86.5%;
+    text-align: center;
+    margin: auto;
+}
+
+.learning .learning-title{
+    text-align: center;
+    padding-top: 10px;
+}
+
+.learning .line{
+    width: 80px;
+    height: 4px;
+    display: block;
+    background-color: rgb(58, 117, 176);
+    border-radius: 20px;
+    margin: 15px auto;
+}
+
+ .Basics-paths div{
+    border: 2px solid rgba(0, 0, 0, 0.242);
+    margin: 10px 0;
+    border-radius: 10px;
+    float: left;
+}
+
+.Basics-paths .level1{
+    height: 300px;
+    width: 400px;
+    background-color: rgb(58, 117, 176);
+}
+
+.Basics-paths .level2{
+    height: 300px;
+    width: 400px;
+    background-color: rgb(58, 117, 176);
+    margin: 10px 50px;
+}
+
+.Basics-paths .level3{
+    height: 300px;
+    width: 400px;
+    background-color: rgb(58, 117, 176);
+}
+
+.Basics-paths .level4{
+    height: 200px;
+    width: 400px;
+    background-color: rgb(25, 135, 84);
+}
+
+.Basics-paths .level5{
+    height: 200px;
+    width: 400px;
+    background-color: rgb(25, 135, 84);
+    margin: 10px 50px;
+}
+
+.Basics-paths .level6{
+    height: 405px;
+    width: 400px;
+    background-color: rgb(25, 135, 84);
+}
+
+.Basics-paths h3{
+    padding:5px 8px;
+    color: white;
+    font-size: 22px;
+}
+
+
+.Basics-paths div .learning-list{
+    text-align: left;
+    padding-left: 30px;
+    color: white;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+.Basics-paths div li{
+    padding-top: 10px;
+}
+
+.Basics-paths div dt{
+    display: list-item;
+    list-style-type: disc;
+    padding-top: 10px;
+}
+
+.Basics-paths div dd{
+    margin-left: 30px;
+    display: list-item;
+    list-style-type: square;
+    color: rgb(6, 40, 54);
+    font-weight: bold;
+}
+
+/* Websites for problem solving=============================== */
+.problem-solving{
+    height: 250px;
+    background-color: rgb(255, 255, 255);
+    position: relative;
+}
+
+.problem-solving img{
+    margin-left: 10px;
+}
+
+.sites{
+    overflow: auto;
+    width: 980px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.sites .site{
+    float: left;
+    position: relative;
+    border: 1px solid rgba(2, 2, 83, 0.148);
+    border-radius: 10px;
+    
+}
+
+.sites .site2{
+    margin: 0 20px;
+}
+
+.sites .sites-icon-overlay{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(113, 194, 228) ;
+    opacity: 0;
+    border-radius: 10px;
+}
+
+.sites .sites-icon-overlay i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 50px;
+    color: rgb(2, 2, 130);
+}
+
+.sites .sites-icon-overlay:hover{
+    opacity: 0.8;
+    transition: 1s;
+}
+
+/* Useful References for java================================= */
+
+.references{
+    background-image: url(../images/reference-backgroud.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    text-align: center; 
+    position: relative;
+    height: 45%;
+}
+
+.references-overlay{
+    background-color: rgba(0, 0, 0, 0.683);
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+}
+
+.references-overlay .references-title{
+    float: right;
+}
+
+.references-groups{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    margin-top: 100px;
+}
+
+.group1, .group2{
+    overflow: auto;
+    width: 1300px;
+    height:290px;
+}
+
+.group1{
+    margin-top: 100px;
+}
+
+.references .ref1{
+    margin-top: 100px;
+    display: inline-block;
+    margin-left: 200px;
+    position: relative;
+    top: 0;
+    
+}
+
+.references-groups .ref{
+    float: left;
+    margin: 30px 30px;
+    position: relative;
+    top: 0;
+}
+
+
+.ref-icon-overlay{
+    width: 100%;
+    height:100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(113, 194, 228, 0.4) ;
+    opacity: 0;
+}
+
+
+.ref .ref-icon-overlay i{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 40px;
+    color: rgb(2, 2, 130);
+}
+
+.ref:hover{ 
+    position: relative;
+    top: -35px;
+    transition: 0.5s;
+}
+
+.ref:hover .ref-icon-overlay{
+    opacity: 0.8;
+    transition: 0.3s;
+    transition-delay: 0.2s;
+}
+
+/* RoadMap for java Backend */
+
+
+.backend{
+    height: 560px;
+    text-align: center;
+    background-image: url("../images/roadmap1.jpg");
+}
+
+
+.backend .backend-paths{
+    height: inherit;
+    background-color: rgba(13, 182, 255, 0.423);
+}
+
+
+.backend h2{
+    padding-top: 30px;
+}
+
+.backend .line{
+    display: block;
+    background-color: rgb(58, 117, 176);
+    width: 100px;
+    height: 5px;
+    margin: auto;
+    border-radius: 10px;
+    margin-top: 10px;
+}
+
+.backend-paths .levels{
+    overflow: auto;
+    position: relative;
+    width: 1450px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.backend-paths .level{
+    height: 50px;
+    width: 260px;
+    float: left;
+    text-align: center;
+    margin: 100px 50px;
+    counter-increment: level;
+    color: white;
+    background-color: rgb(29, 94, 158);
+    position: relative;
+}
+
+
+.backend-paths .level h3{
+    padding-top: 15px ;
+}
+
+/* Padding can not be negative. */
+.backend-paths .level3 h3{
+    padding-top: 5px ;
+}
+
+.backend-paths .level-list i{
+    font-size: 20px;
+    float: left;
+    background-color: rgba(1, 63, 90, 0.614);
+    padding-bottom: 5px;
+    padding-left: 5px;
+    padding-right: 5px;
+    position: absolute;
+    top: 12px;
+    left: -25px;
+}
+
+.backend-paths .level-list i ul{
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    background-color: rgba(1, 63, 90, 0.829);
+    padding-left: 30px;
+    margin-left: -5px;
+    font-size: 20px;
+    display: none;
+    z-index: 10;
+}
+
+.backend-paths .level-list i ul li{
+    padding: 5px 0;
+}
+
+.backend-paths .level-list i .row1{
+    top:24px;
+}
+
+.backend-paths .level-list i .row2{
+    bottom:24px;
+}
+
+.backend-paths .level3 .level-list ul,
+.backend-paths .level6 .level-list ul{
+    height: 100px;
+} 
+
+.backend-paths .level2 .level-list ul,
+.backend-paths .level5 .level-list ul{
+    height: 350px;
+} 
+.backend-paths .level8 .level-list ul{
+    height: 250px;
+}
+
+.backend-paths .level-list i:hover{
+    cursor: pointer;
+}
+
+.backend-paths .level-list i:hover ul{
+    display: block;
+}
+
+.backend-paths .level-list i ul li{
+    width: 300px;
+    text-align: left;
+}
+
+.backend-paths .level:after{
+    content: counter(level);
+    background-color: rgba(1, 63, 90, 0.614);
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%);
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    line-height: 25px;
+    
+}
+
+/* Backend==================================================== */
+.backend-ref{
+    height: 700px;
+}
+
+/* Useful Youtupe Channels */
+
+.youtupe-channels{
+    background-image: url("../images/youtupe.jpg");
+}
+
+.overlay-channels{
+    height: 250px;
+    text-align: center;
+    background-color: rgba(2, 0, 0, 0.707);
+}
+
+.overlay-channels .channel {
+    float: left;
+    margin: 20px 20px;
+}
+
+.overlay-channels .channel img{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+}
+
+.overlay-channels .channel h5{
+   color: white;
+}
+
+.overlay-channels  .for-java{
+    width: 1305px;
+    margin: auto;
+}
+
+.overlay-channels  .for-backend{
+    width: 350px;
+    margin: auto;
+}
+
+/* Channel==================================================== */
+
+.Youtupe-Channel {
+    height: 500px;
+}
+
+.Youtupe-Channel .container{
+    overflow: auto;
+    width: 80%;
+    margin: auto;
+    
+}
+
+.container .channel{
+    margin:50px 0 50px 0;
+    float: left;
+}
+
+.container .form{
+    width:330px;
+    height:400px;
+    margin:50px 0 50px 0;
+    background-color: white;
+    border-radius: 10px;
+    float: right;
+}
+
+.container .form label{
+    font-weight: bold;
+    font-size: 13px;
+    margin-left: 15px;
+    display: block;
+}
+
+.container .form input{
+    height: 40px;
+    width: 300px;
+    border-radius: 10px;
+    margin: 5px 0 20px 15px;
+    border: 2px solid rgb(100, 139, 222);
+    font-size: 20px;
+    display: block;
+}
+
+.container .form h4{
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    margin: 20px 0;
+}
+
+input[type="submit"]{
+    background-color: rgb(31, 161, 218);
+    font-size: 15px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Contacts==================================================== */
+
+.contacts {
+    height: 300px;
+    background-color: black;
+    position: relative;
+}
+
+.contacts .contact-items{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.contacts .contact-items img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    display: block;
+    margin: auto;
+    padding-top: 10px;
+}
+
+.contacts .contact-items ul{
+    list-style-type: none;
+    text-align: center;
+}
+
+.contacts .contact-items ul li{
+    display: inline-block;
+    margin: 15px 10px;
+}
+
+.contacts .contact-items ul i{
+    font-size: 40px;
+}
+
+.contacts .contact-items ul .facebook, .linkedin{
+    color: rgb(6, 116, 231);
+}
+
+
+
+.contacts .contact-items ul .whatsapp{
+    color: rgb(0, 255, 183);
+}
+
+.contacts .contact-items ul .github{
+    color: white
+}
+
+.contacts .contact-items ul .youtube{
+    color: rgb(235, 25, 25);
+}
+
+.contacts .contact-items p{
+    text-align: center;
+    color: white;
+}
