@@ -5,10 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مسابقة ترتيل للقرآن الكريم 2023</title>
   <script>
-    // Disable right-click on the entire page
-    window.addEventListener('contextmenu', function (e) {
-        e.preventDefault();
+    // Function to check for screenshot attempt on mobile
+function checkScreenshotAttempt() {
+    window.addEventListener('blur', function () {
+        // When the window loses focus (indicating a possible screenshot attempt on mobile)
+        // Add a class to the watermark to make it visible
+        document.querySelector('.watermark').classList.add('show');
     });
+}
+
+// Call the function when the page loads
+checkScreenshotAttempt();
 </script>
   <link rel="stylesheet" href="styles.css">
 </head>
