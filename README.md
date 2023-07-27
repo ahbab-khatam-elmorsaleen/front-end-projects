@@ -1,4 +1,4 @@
-# front-end-projects
+# Copyright and ownership are reserved to a software developer khaledtaha105@gmail.com 
 
 ## Project 1 : RoadMap for java Developers
 
