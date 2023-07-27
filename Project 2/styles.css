@@ -94,6 +94,24 @@ li {
   border-color: #50de61;
 }
 
+.contacts {
+  height: 50px;
+  background-color: black;
+  position: relative;
+}
+
+.contacts .contact-items {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.contacts .contact-items p {
+  text-align: center;
+  color: white;
+}
+
 /* Add responsive styles for different screen sizes */
 @media screen and (max-width: 800px) {
   .level {
