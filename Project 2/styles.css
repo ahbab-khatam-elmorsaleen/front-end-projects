@@ -25,7 +25,7 @@ h1 {
   color: #000000;
 }
 
-h2 {
+h2 , h5{
   text-align: center;
   color: #ffffff;
   background-color: #0b5c9e;
@@ -98,11 +98,9 @@ li {
   height: 100px;
   margin: 10px;
   background-color: black;
-  position: relative;
 }
 
 .contacts .contact-items {
-  position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
