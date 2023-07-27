@@ -4,19 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>مسابقة ترتيل للقرآن الكريم 2023</title>
-  <script>
-    // Function to check for screenshot attempt on mobile
-function checkScreenshotAttempt() {
-    window.addEventListener('blur', function () {
-        // When the window loses focus (indicating a possible screenshot attempt on mobile)
-        // Add a class to the watermark to make it visible
-        document.querySelector('.watermark').classList.add('show');
-    });
-}
 
-// Call the function when the page loads
-checkScreenshotAttempt();
-</script>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -36,5 +24,21 @@ checkScreenshotAttempt();
     <h5>copyright &copy; 2023. All rights reserved to the software engineer who voluntarily developed this site for the Ethad Foundation.</h5>
     <h5>جميع الحقوق محفوظة لمهندس البرمجيات الذي قام بتطوير هذا الموقع تطوعا لمؤوسسة الاتحاد.</h5>
   </div>
+
+  <script>
+    // Function to check for screenshot attempt on mobile
+ function checkScreenshotAttempt() {
+     window.addEventListener('blur', function () {
+         // When the window loses focus (indicating a possible screenshot attempt on mobile)
+         // Add a class to the watermark to make it visible
+         document.querySelector('.watermark').classList.add('show');
+     });
+ }
+ 
+ // Call the function when the page loads
+ checkScreenshotAttempt();
+ 
+ </script>
+ 
 </body>
 </html>
