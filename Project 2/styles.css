@@ -1,3 +1,7 @@
+html {
+  user-select: none;
+}
+
 body {
   font-family: Arial, sans-serif;
   margin: 10px;
@@ -121,5 +125,12 @@ li {
 @media screen and (max-width: 600px) {
   .level {
     width: 100%; /* For even smaller screens, display one level per row */
+  }
+}
+
+@media print {
+  html,
+  body {
+     display: none;
   }
 }
