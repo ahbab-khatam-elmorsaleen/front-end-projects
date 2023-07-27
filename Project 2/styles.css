@@ -95,7 +95,8 @@ li {
 }
 
 .contacts {
-  height: 50px;
+  height: 100px;
+  margin: 10px;
   background-color: black;
   position: relative;
 }
