@@ -115,25 +115,6 @@ li {
   color: white;
 }
 
-.watermark {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  text-align: center;
-  background-image: url('./black-wallpapers-images-3.jpg');
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-attachment: fixed;
-  z-index: 9999; /* Ensures the watermark appears on top of other content */
-  pointer-events: none; /* Allows user interactions to pass through the watermark */
-}
 
 /* Add responsive styles for different screen sizes */
 @media screen and (max-width: 800px) {
