@@ -40,7 +40,7 @@ ul {
 li {
   margin: 5px 0;
   padding: 5px 10px;
-  text-align: center;
+  text-align: right;
   font-size: 20px;
   background-color: #50de61;
   color: #fff;
@@ -94,21 +94,9 @@ li {
   border-color: #50de61;
 }
 
-.contacts {
-  height: 100px;
-  margin: 10px;
-  background-color: black;
-}
-
-.contacts .contact-items {
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-}
-
-.contacts .contact-items p {
-  text-align: center;
-  color: white;
+.score{
+  background-color: #555ce4;
+  color: #fff;
 }
 
 
