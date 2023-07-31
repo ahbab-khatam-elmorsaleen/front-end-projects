@@ -99,7 +99,6 @@ li {
   color: #fff;
 }
 
-
 /* Add responsive styles for different screen sizes */
 @media screen and (max-width: 800px) {
   .level {
