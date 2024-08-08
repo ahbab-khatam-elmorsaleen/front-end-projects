@@ -10,46 +10,75 @@
   <div class="container">
     <div id="level1" class="level">
       <h2>المستوي الأول</h2>
-      <ul>
-        <li class =  "score" dir="auto">1. روان محمد عبد المولى عبد الرشيد</li>
-        <li class = "score" dir="auto">2. فتحيه عبدالرحيم احمد عبدالرحيم</li>
-        <li class = "score" dir="auto">3. هادي محمد عبد المولى عبد الرشيد</li>
-        <li class = "score" dir="auto">4. اسامه طارق شعبان عبد الكريم</li>
-        <li class = "score" dir="auto">5. اياد كرم عبد الرحيم ابو زيد فراج</li>
-        <li class = "score" dir="auto">6. يوسف عبدالهادى امين عبدالهادى</li>
-        <li class = "score" dir="auto">7. بسمله وليد عبدالنبي عبدالمنعم السيد</li>
-        <li class = "score" dir="auto">8. عمار محمد عبدالمنعم محمد</li>
-        <li class = "score" dir="auto">9. محمد زين العابدين عامر فواز مهران</li>
-        <li class = "score" dir="auto">10. محمد مبروك حسين احمد</li>
-        <li>منه سمير محمود محمد</li>
-        <li>زينب محمد احمد عبد العليم</li>
-        <li>محمد فيصل محمد محمود ابو رواش</li>
-        <li>محمد عبد الهادى امين عبد الهادى</li>
-        <li>سلمي محمد أبو شوشة</li>
-        <li>عبدالرحمن محمد سيد احمد حسنين</li>
-        <li>عبد الرحمن محسن رياض محمد</li>
-        <li>ملك محمود سامي احمد</li>
-        <li>منار صابر السيد عمر</li>
-        <li>روان السيد محمد سيد</li>
-        <li>مصعب احمد امين عبد الله</li>
-        <li>بسمله وليد محمد عبده ابراهيم</li>
-        <li>عبدالرحمن محمد عبدالمنعم محمد</li>
-        <li>عمار شرف الدين محمد عبد الرحمن محمد</li>
-        <li>عبدالله محمد خلف</li>
-        <li>عبدالرحمن وليد مندي عبد النبي حسن</li>
-        <li>جنا محمد فاروق محمد الشناوي</li>
-        <li>محمد محمد صبحي عبدالحميد</li>
-        <li>احمد وليد مندي عبدالنبي حسن</li>
-        <li>جني أحمد محمد السيد</li>
+      <h2 id = "passed" >عدد الناجحين : </h2>
+      <ul id="namesList">
+        <!-- Names will be populated here from the Google Sheet -->
       </ul>
     </div>
-
-    <!-- <h5>copyright &copy; 2023. All rights reserved to the software engineer who voluntarily developed this site for the Ethad Foundation.</h5>
-    <h5>جميع الحقوق محفوظة لمهندس البرمجيات الذي قام بتطوير هذا الموقع تطوعا لمؤوسسة الاتحاد.</h5> -->
-
-    
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const sheetID = '1Q2xHSCGLDgslpMjmmHCDE2oswMiexkPW79xRCBe0D8Q'; 
+      const sheetName = `level1`;
+      const query = encodeURIComponent(`SELECT B WHERE M >= 50`);
 
+      const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?&sheet=${sheetName}&tq=${query}`;
+
+      fetch(url)
+      .then(response => response.text())
+      .then(data => {
+          // Extract JSON part of response
+          const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+          console.log(jsonData)
+          
+          if (jsonData.table.rows.length > 0) {
+              // Specify columns to select (0-based index)
+              const selectedColumns = [0]; // Adjust based on your requirement
+
+              // Filter rows based on search criteria (contains `id`)
+              const filteredResults = jsonData.table.rows.map(row => 
+                  selectedColumns.map(colIndex => row.c[colIndex] ? row.c[colIndex].v : '')
+              );
+              
+              displayResults(filteredResults);
+          } else {
+              // Show no results message
+              $('#noResultsMsg').css('display', 'block');
+          }
+
+          // Hide loading overlay
+          $('#overlay').css('display', 'none');
+      })
+      .catch(error => {
+          console.error("Failed to load data from Google Sheet:", error);
+          // Hide loading overlay on error
+          $('#overlay').css('display', 'none');
+      });          
+    });
+
+    function displayResults(results) {
+      const passed = $('#passed');
+      passed.append(results.length)
+
+      const namesList = $('#namesList');
+      namesList.empty();
+      if (results && results.length > 0) {
+        results.forEach((name, index) => {
+          var listItem = "";
+          if(index < 10){
+             listItem = `<li class="score" dir="auto">${index + 1}. ${name[0]}</li>`;
+          } else{
+            listItem = `<li>${name[0]}</li>`;
+          }
+          namesList.append(listItem);
+        });
+      } else {
+        namesList.append('<li>لا توجد أسماء</li>');
+      }
+  }
+  
+  </script>
 </body>
 </html>

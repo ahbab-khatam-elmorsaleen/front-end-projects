@@ -7,80 +7,78 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
   <div class="container">
     <div id="level3" class="level">
       <h2>المستوي الثالث</h2>
-      <ul>
-        <li class = "score" dir="auto">1. مصطفى محمد عبده حسن سليمان</li>
-        <li class = "score" dir="auto">2. تسنيم عبد الفتاح محمود ابراهيم</li>
-        <li class = "score" dir="auto">3. فريده مصطفى عبد الحميد على</li>
-        <li class = "score" dir="auto">4. مريم واىل عبده رحيم محمود</li>
-        <li class = "score" dir="auto">5. أصالة ناصر أحمد</li>
-        <li class = "score" dir="auto">6. حنين عمرو محمد</li>
-        <li class = "score" dir="auto">7. عبد الرحمن اشرف كمال محمد عيسي</li>
-        <li class = "score" dir="auto">8. جنى عمرو محمد حسن مصطفى</li>
-        <li class = "score" dir="auto">9. جني عمرو محمد</li>
-        <li class = "score" dir="auto">10. ايه محمد الديب احمد محمود</li>
-        <li>محمد محمود ناجي احمد محمد</li>
-        <li>مسلم وليد عبد الجبار على</li>
-        <li>محمد محمد فاروق محمد الشناوي</li>
-        <li>صفيه محمود حسين احمد</li>
-        <li>نور محمد مغربى على مكى</li>
-        <li>هيام مسعود احمد عبد القوي سعيد</li>
-        <li>نورا محمد محمود عبد اللاه خليفه</li>
-        <li>نورهان امين عبد الحميد علام احمد</li>
-        <li>نورهان أمين عبد الحميد</li>
-        <li>نورهان محمد عز الدين محمد سعد</li>
-        <li>نورا  أحمد محمود عبد الله</li>
-        <li>آيات عصام سلامة</li>
-        <li>مريم عبد الحميد صبحي</li>
-        <li>حبيبه ايهاب فتحى اسماعيل</li>
-        <li>مريم علي عبد الجيد النجدي حسن</li>
-        <li>محمد يوسف عباس</li>
-        <li>مسلم كرم عبد الرحيم ابو زيد فواج</li>
-        <li>غيداء حسن يونس محمود هندي</li>
-        <li>ريتاج احمد السيد محمد مبروك</li>
-        <li>منه اسماعيل فوزى رمضان</li>
-        <li>نرمين سعيد محمد سليمان عبد الله</li>
-        <li>اسماء محمود محمود محمد مبروك الدرس</li>
-        <li>حبيبه عبد الناصر ربيع عبد الله عبد السلام</li>
-        <li>حبيبة عبد الناصر</li>
-        <li>اصاله محمد ناصر محمد محروس</li>
-        <li>مريم سيد محمود سيد محمد امام</li>
-        <li>حبيبه حماده امين عبد الهادى</li>
-        <li>ريماس محمود ناجي احمد محمد</li>
-        <li>مريهان علي عبد الجيد</li>
-        <li>ملك ضاحي محمد السيد</li>
-        <li>سما محمد علي عبد العزيز</li>
-        <li>ابراهيم وليد ابراهيم محمد محمد رضوان</li>
-        <li>حبيبه حاتم عبد الحفيظ محمد</li>
-        <li>نيره احمد محمد احمد حسن</li>
-        <li>اسلام خالد خلف خليف حسن</li>
-        <li>ساجد ايمن صلاح</li>
-        <li>نور ابراهيم عصام</li>
-        <li>احمد سيد محمود سيد محمد امام</li>
-        <li>مصطفى ايمن محمد حسن مصطفى</li>
-        <li>هنا محمد جلال محمد</li>
-        <li>عمر جمال السيد عبدالعال</li>
-        <li>احمد طارق بكرى عبدالجواد محمد</li>
-        <li>احمد اسامه عبدالفتاح</li>
-        <li>ايه محمود رمضان</li>
-        <li>عبد الله عبد الناصر ربيع عبد الله عبد السلام</li>
-        <li>مريم ربيع احمد السيد</li>
-        <li>ندى صابر سعودى دسوقي</li>
-        <li>ايمان عماد الدين محمد حسن مصطفى</li>
-        <li>كريم احمد محمد السيد</li>
+      <h2 id = "passed" >عدد الناجحين : </h2>
+      <ul id="namesList">
+        <!-- Names will be populated here from the Google Sheet -->
       </ul>
     </div>
-
-    <!-- <h5>copyright &copy; 2023. All rights reserved to the software engineer who voluntarily developed this site for the Ethad Foundation.</h5>
-    <h5>جميع الحقوق محفوظة لمهندس البرمجيات الذي قام بتطوير هذا الموقع تطوعا لمؤوسسة الاتحاد.</h5> -->
-
-    
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const sheetID = '1Q2xHSCGLDgslpMjmmHCDE2oswMiexkPW79xRCBe0D8Q'; 
+      const sheetName = `level3`;
+      const query = encodeURIComponent(`SELECT B WHERE M >= 50`);
 
+      const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?&sheet=${sheetName}&tq=${query}`;
 
+      fetch(url)
+      .then(response => response.text())
+      .then(data => {
+          // Extract JSON part of response
+          const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+          console.log(jsonData)
+          
+          if (jsonData.table.rows.length > 0) {
+              // Specify columns to select (0-based index)
+              const selectedColumns = [0]; // Adjust based on your requirement
+
+              // Filter rows based on search criteria (contains `id`)
+              const filteredResults = jsonData.table.rows.map(row => 
+                  selectedColumns.map(colIndex => row.c[colIndex] ? row.c[colIndex].v : '')
+              );
+              
+              displayResults(filteredResults);
+          } else {
+              // Show no results message
+              $('#noResultsMsg').css('display', 'block');
+          }
+
+          // Hide loading overlay
+          $('#overlay').css('display', 'none');
+      })
+      .catch(error => {
+          console.error("Failed to load data from Google Sheet:", error);
+          // Hide loading overlay on error
+          $('#overlay').css('display', 'none');
+      });          
+    });
+
+    function displayResults(results) {
+      const passed = $('#passed');
+      passed.append(results.length)
+
+      const namesList = $('#namesList');
+      namesList.empty();
+      if (results && results.length > 0) {
+        results.forEach((name, index) => {
+          var listItem = "";
+          if(index < 10){
+             listItem = `<li class="score" dir="auto">${index + 1}. ${name[0]}</li>`;
+          } else{
+            listItem = `<li>${name[0]}</li>`;
+          }
+          namesList.append(listItem);
+        });
+      } else {
+        namesList.append('<li>لا توجد أسماء</li>');
+      }
+  }
+  
+  </script>
 </body>
 </html>

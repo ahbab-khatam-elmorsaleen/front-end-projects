@@ -7,80 +7,78 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
   <div class="container">
     <div id="level5" class="level">
       <h2>المستوي الخامس</h2>
-      <ul>
-        <li class = "score" dir="auto">1. تاليا عمر احمد مصطفى</li>
-        <li class = "score" dir="auto">2. رقيه محمد عادل اسماعيل</li>
-        <li class = "score" dir="auto">3. جنى محمد صلاح احمد</li>
-        <li class = "score" dir="auto">4. اسيل سيد محمد</li>
-        <li class = "score" dir="auto">5. سما مبروك حسين احمد</li>
-        <li class = "score" dir="auto">6. حبيبه هانى سعيد</li>
-        <li class = "score" dir="auto">7. فاطمه بدر احمد عبد الحميد</li>
-        <li class = "score" dir="auto">8. فريده احمد سعيد مندى</li>
-        <li class = "score" dir="auto">9. رنا محمد محمود الحسيني</li>
-        <li class = "score" dir="auto">10. مازن سيد عيد هاشم علي</li>
-        <li>يارا اسلام حسين محمود</li>
-        <li>ايه سيد عبد الراضي محسب</li>
-        <li>سلمي شريف سمير توفيق</li>
-        <li>ياسين محمد حسن عبد الفتاح</li>
-        <li>رودينا تامر الفرغلى</li>
-        <li>جويريه رياض مصطفي</li>
-        <li>ريناد محمد عاطف رضوان</li>
-        <li>فريده حمدي احمد امام</li>
-        <li>عاىشه وليد عبدالنبي عبدالمنعم</li>
-        <li>حمزه طارق محمد عادل ابو الوفا مصطفي</li>
-        <li>كوثر السيد محمود عمران</li>
-        <li>لارا محمد يوسف محمد علي</li>
-        <li>البراء كرم عبد الرحيم ابو زيد فراج</li>
-        <li>احمد محمد محمود صالح يونس</li>
-        <li>محمد احمد محمد كمال السيد</li>
-        <li>رودينا محمود عبدالله حسين</li>
-        <li>ريتال طارق بكرى عبدالجواد محمد</li>
-        <li>عبد الرحمن محمد فتحي</li>
-        <li>عمر احمد محمد يوسف مكاوي</li>
-        <li>جنى احمد احمد</li>
-        <li>رويدا عماد حسام الدين محمود</li>
-        <li>ملك صبرى سليمان الصاوي</li>
-        <li>أنس مصطفي زيدان</li>
-        <li>عبد الرحمن محمد عبد الرحمن</li>
-        <li>بدر عماد حسام الدين محمود</li>
-        <li>اميره احمد السيد البدوي</li>
-        <li>محمد مصطفي اسامه ابراهيم علي</li>
-        <li>نور كمال عطيفي احمد محمود</li>
-        <li>يوسف محمود محمد حسن دويدار</li>
-        <li>اياد محمد بكر محمد متولي</li>
-        <li>محمود محمد مشحوت عبدالحميد</li>
-        <li>مروان محمود صابر محمد احمد</li>
-        <li>سجي جمال السيد</li>
-        <li>احمد ناصر احمد همام</li>
-        <li>علم جمال علم الدين عبد الهادي</li>
-        <li>جويريه احمد سعيد عبد الحميد</li>
-        <li>محمد خالد جمعه قوشتي خليل</li>
-        <li>محمد سامح محمد ربيع علي جاد الرب الحديدي</li>
-        <li>حفصه احمد حسن شحاته</li>
-        <li>رحاب محمود احمد محمود احمد</li>
-        <li>رحاب محمود أحمد</li>
-        <li>عبدالله محمد مهدى عبدالقادر مجاور</li>
-        <li>حمزه سعيد حامد هميمي</li>
-        <li>زينه البراء صلاح الدين فواد محمد</li>
-        <li>علياء عماد عاشور عيد عبد الهادى</li>
-        <li>روميساء احمد طلعت احمد</li>
-        <li>عمار احمد هانى محمد</li>
-        <li>محمد طه محمد السيد</li>
-        <li>محمد مصطفي عبد العزيز محمد حسين</li>
-        <li>زهره احمد فؤاد</li>
+      <h2 id = "passed" >عدد الناجحين : </h2>
+      <ul id="namesList">
+        <!-- Names will be populated here from the Google Sheet -->
       </ul>
     </div>
-
-    <!-- <h5>copyright &copy; 2023. All rights reserved to the software engineer who voluntarily developed this site for the Ethad Foundation.</h5>
-    <h5>جميع الحقوق محفوظة لمهندس البرمجيات الذي قام بتطوير هذا الموقع تطوعا لمؤوسسة الاتحاد.</h5> -->
-
-    
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const sheetID = '1Q2xHSCGLDgslpMjmmHCDE2oswMiexkPW79xRCBe0D8Q'; 
+      const sheetName = `level5`;
+      const query = encodeURIComponent(`SELECT B WHERE M >= 50`);
 
+      const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?&sheet=${sheetName}&tq=${query}`;
+
+      fetch(url)
+      .then(response => response.text())
+      .then(data => {
+          // Extract JSON part of response
+          const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+          console.log(jsonData)
+          
+          if (jsonData.table.rows.length > 0) {
+              // Specify columns to select (0-based index)
+              const selectedColumns = [0]; // Adjust based on your requirement
+
+              // Filter rows based on search criteria (contains `id`)
+              const filteredResults = jsonData.table.rows.map(row => 
+                  selectedColumns.map(colIndex => row.c[colIndex] ? row.c[colIndex].v : '')
+              );
+              
+              displayResults(filteredResults);
+          } else {
+              // Show no results message
+              $('#noResultsMsg').css('display', 'block');
+          }
+
+          // Hide loading overlay
+          $('#overlay').css('display', 'none');
+      })
+      .catch(error => {
+          console.error("Failed to load data from Google Sheet:", error);
+          // Hide loading overlay on error
+          $('#overlay').css('display', 'none');
+      });          
+    });
+
+    function displayResults(results) {
+      const passed = $('#passed');
+      passed.append(results.length)
+      
+      const namesList = $('#namesList');
+      namesList.empty();
+      if (results && results.length > 0) {
+        results.forEach((name, index) => {
+          var listItem = "";
+          if(index < 10){
+             listItem = `<li class="score" dir="auto">${index + 1}. ${name[0]}</li>`;
+          } else{
+            listItem = `<li>${name[0]}</li>`;
+          }
+          namesList.append(listItem);
+        });
+      } else {
+        namesList.append('<li>لا توجد أسماء</li>');
+      }
+  }
+  
+  </script>
 </body>
 </html>

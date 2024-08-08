@@ -7,74 +7,78 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  
   <div class="container">
     <div id="level4" class="level">
       <h2>المستوي الرابع</h2>
-      <ul>
-        <li class = "score" dir="auto">1. سما محمد فتحي</li>
-        <li class = "score" dir="auto">2. جنه محمد يوسف محمود</li>
-        <li class = "score" dir="auto">3. احمد اسماعيل سعد الدين يوسف</li>
-        <li class = "score" dir="auto">4. جنا محمد عبد المنعم احمد عبد الحي</li>
-        <li class = "score" dir="auto">5. ملك ناصر فهيم ابراهيم حامد</li>
-        <li class = "score" dir="auto">6. ممدوح محمد ممدوح محمد كمال</li>
-        <li class = "score" dir="auto">7. عمر توفيق عبد الجواد توفيق</li>
-        <li class = "score" dir="auto">8. جنى محمد ابو العلمين ابراهيم</li>
-        <li class = "score" dir="auto">9. عمار احمد محمدي علي</li>
-        <li class = "score" dir="auto">10. بلال محمد عبد العظيم سيد</li>
-        <li>رودينا واىل عبد الرحمن محمد</li>
-        <li>هاجر سيد عبد الراضي محسب</li>
-        <li>زينب طه محمد السيد</li>
-        <li>لمي اسماعيل سعد الدين يوسف</li>
-        <li>بسمله احمد حنفي محمود</li>
-        <li>احمد عماد الدين محمد حسن مصطفى</li>
-        <li>ايسل حازم حسام</li>
-        <li>محمود احمد عبد الله احمد حسين</li>
-        <li>مصطفى حمدى محمد فراج سالم</li>
-        <li>رانا محمد ابو العلمين ابراهيم</li>
-        <li>روميساء احمد محمد احمد</li>
-        <li>هاجر محمد ناصر محمد محروس</li>
-        <li>ملك هاني رجب رشاد</li>
-        <li>عاىشه احمد محمد حسن محمد</li>
-        <li>دولت محمد الديب احمد محمود</li>
-        <li>ندى علاء محمد عبد الستار</li>
-        <li>عبد الرحمن عيد فرج محمود محمد</li>
-        <li>محمد طه رمضان حجازي موسى</li>
-        <li>جنى عصام الدين حسن جبر</li>
-        <li>روميساء كرم عبد الرحيم ابو زيد فراج</li>
-        <li>جودي احمد محمد يوسف مكاوي</li>
-        <li>جني حسن سيد خلف الله</li>
-        <li>رؤى تامر الفرغلى</li>
-        <li>مريم خالد خلف خليفه حسن</li>
-        <li>سيهيلة سمير عبد الفتاح</li>
-        <li>عبدالله احمد محمد حسن محمد</li>
-        <li>محمد محمود محمد حسن دويدار</li>
-        <li>عائشه احمد هانى محمد</li>
-        <li>لمار محمد يوسف محمد علي</li>
-        <li>مريم محمود محمد السيد احمد</li>
-        <li>ترتيل مصطفي عبد الحميد السيد</li>
-        <li>جنى عاطف عبد الرازق ابراهيم</li>
-        <li>طه وليد ابراهيم محمد محمد رضوان</li>
-        <li>سميه رضا حسن محمد</li>
-        <li>طه اسماعيل علي محمود عبدالله</li>
-        <li>محمد عمرو محمد حسن مصطفى</li>
-        <li>عبد الرحمن واىل عبد الرحمن محمد</li>
-        <li>ايات صابر سلامه حلمي</li>
-        <li>يوسف محمد الديب احمد محمود</li>
-        <li>دينا محمود ابو الفتوح حسين</li>
-        <li>داليا تامر سليمان حسن</li>
-        <li>انس محمد مصطفى صابر</li>
-        <li>عبيده جمال السيد</li>
-        <li>هنا محمد اسماعيل محمد اسماعيل</li>
+      <h2 id = "passed" >عدد الناجحين : </h2>
+      <ul id="namesList">
+        <!-- Names will be populated here from the Google Sheet -->
       </ul>
     </div>
-
-    <!-- <h5>copyright &copy; 2023. All rights reserved to the software engineer who voluntarily developed this site for the Ethad Foundation.</h5>
-    <h5>جميع الحقوق محفوظة لمهندس البرمجيات الذي قام بتطوير هذا الموقع تطوعا لمؤوسسة الاتحاد.</h5> -->
-
-    
   </div>
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script>
+    $(document).ready(function() {
+      const sheetID = '1Q2xHSCGLDgslpMjmmHCDE2oswMiexkPW79xRCBe0D8Q'; 
+      const sheetName = `level4`;
+      const query = encodeURIComponent(`SELECT B WHERE M >= 50`);
 
+      const url = `https://docs.google.com/spreadsheets/d/${sheetID}/gviz/tq?&sheet=${sheetName}&tq=${query}`;
+
+      fetch(url)
+      .then(response => response.text())
+      .then(data => {
+          // Extract JSON part of response
+          const jsonData = JSON.parse(data.substring(47).slice(0, -2));
+          console.log(jsonData)
+          
+          if (jsonData.table.rows.length > 0) {
+              // Specify columns to select (0-based index)
+              const selectedColumns = [0]; // Adjust based on your requirement
+
+              // Filter rows based on search criteria (contains `id`)
+              const filteredResults = jsonData.table.rows.map(row => 
+                  selectedColumns.map(colIndex => row.c[colIndex] ? row.c[colIndex].v : '')
+              );
+              
+              displayResults(filteredResults);
+          } else {
+              // Show no results message
+              $('#noResultsMsg').css('display', 'block');
+          }
+
+          // Hide loading overlay
+          $('#overlay').css('display', 'none');
+      })
+      .catch(error => {
+          console.error("Failed to load data from Google Sheet:", error);
+          // Hide loading overlay on error
+          $('#overlay').css('display', 'none');
+      });          
+    });
+
+    function displayResults(results) {
+      const passed = $('#passed');
+      passed.append(results.length)
+      
+      const namesList = $('#namesList');
+      namesList.empty();
+      if (results && results.length > 0) {
+        results.forEach((name, index) => {
+          var listItem = "";
+          if(index < 10){
+             listItem = `<li class="score" dir="auto">${index + 1}. ${name[0]}</li>`;
+          } else{
+            listItem = `<li>${name[0]}</li>`;
+          }
+          namesList.append(listItem);
+        });
+      } else {
+        namesList.append('<li>لا توجد أسماء</li>');
+      }
+  }
+  
+  </script>
 </body>
 </html>
