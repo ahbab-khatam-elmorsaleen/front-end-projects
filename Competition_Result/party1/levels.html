@@ -10,6 +10,9 @@
   <div class="container">
     <div id="levels" class="level">
       <h2>يسمح بحضور ولي أمر واحد فقط مع كل متسابق</h2>
+      <h2>يرجي التواصل علي الواتس آب وارسال عدد المتسابقين التابعين لولي الأمر أو أولياء الأمور المسؤولين عنهم للتأكيد علي الحضور وحجز الدعوة</h2>
+      <h2>حضور الحفلة مشروط بحجز الدعوة</h2>
+      <h2>آخر موعد للتأكيد علي الحضور يوم الجمعة (30) من شهر 8 لعام 2024</h2>
       <h2>أسماء المتسابقين</h2>
       <ul id="namesList">
         <!-- Names will be populated here from the Google Sheet -->
@@ -64,7 +67,12 @@
       namesList.empty();
       if (results && results.length > 0) {
         results.forEach((name, index) => {
-          var listItem = `<li dir="auto">${index + 1}. ${name[0]}</li>`;
+          var listItem = "";
+          if(name.includes('المستوي')){
+            listItem = `<li class="score" dir="auto">${name[0]}</li>`;
+          }else{
+           listItem = `<li dir="auto">${index + 1}. ${name[0]}</li>`;
+          }
           namesList.append(listItem);
         });
       } else {
