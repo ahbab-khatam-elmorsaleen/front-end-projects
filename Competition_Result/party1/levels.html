@@ -68,7 +68,7 @@
       if (results && results.length > 0) {
         results.forEach((name, index) => {
           var listItem = "";
-          if(name.includes('المستوي')){
+          if(name[0].includes('المستوي')){
             listItem = `<li class="score" dir="auto">${name[0]}</li>`;
           }else{
            listItem = `<li dir="auto">${index + 1}. ${name[0]}</li>`;
