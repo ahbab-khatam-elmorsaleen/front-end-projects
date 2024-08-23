@@ -66,13 +66,13 @@
       const namesList = $('#namesList');
       namesList.empty();
       if (results && results.length > 0) {
-        results.forEach((name, index) => {
+        var index = 1;
+        results.forEach((name) => {
           var listItem = "";
-          console.log(name[0]);
           if(name[0].includes('المستوي')){
             listItem = `<li class="score" style="text-align: center;">${name[0]}</li>`;
           }else{
-           listItem = `<li dir="auto">${index + 1}. ${name[0]}</li>`;
+           listItem = `<li dir="auto">${index++}. ${name[0]}</li>`;
           }
           namesList.append(listItem);
         });
